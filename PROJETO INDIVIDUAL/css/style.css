@@ -4,18 +4,20 @@
 }
 
 a {
-    color: #fff;
+    color: #FEA94E;
     text-decoration: none;
 }
 
 a:hover {
-    opacity: 0.1;
+    opacity: 0.7;
 }
 
-.logo {
+.Logo {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
+    margin: 9px;
+    height: 80%;
 }
 
 nav {
@@ -26,11 +28,11 @@ nav {
      'Arial Narrow', Arial, sans-serif;
     background: #787833;
     color: #FEA94E;
-    height: 8vh;
+    height: 14vh;
 }
 
 main {
-    background: url("") no-repeat center center;
+    background: url("/pics/backgroundhome.jpg") no-repeat center center;
     background-size: cover;
     height: 92vh;
 }
@@ -42,7 +44,7 @@ main {
 
 .nav-list li{
     letter-spacing: 3px;
-    margin-left: 32px;
+    margin-left: 64px;
 }
 
 .mobile-menu {
@@ -65,7 +67,7 @@ main {
 
     .nav-list{
         position: absolute;
-        top: 8vh;
+        top: 14vh;
         right: 0;
         width: 50vw;
         height: 92vh;
