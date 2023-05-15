@@ -3,7 +3,13 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
+    transition: 10s ease;
+    cursor: pointer;
     color: #FEA94E;
     text-decoration: none;
 }
@@ -11,6 +17,8 @@ a {
 a:hover {
     opacity: 0.7;
 }
+
+/*Navbar*/
 
 .Logo {
     font-size: 24px;
@@ -29,12 +37,6 @@ nav {
     background: #787833;
     color: #FEA94E;
     height: 14vh;
-}
-
-main {
-    background: url("/pics/backgroundhome.jpg") no-repeat center center;
-    background-size: cover;
-    height: 92vh;
 }
 
 .nav-list {
@@ -80,6 +82,8 @@ main {
     }
 
     .nav-list li {
+        cursor: pointer;
+        display: none;
         margin-left: 0;
         opacity: 0;
     }
@@ -115,4 +119,46 @@ main {
 
 .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/*Main page - Home*/
+
+main {
+    background-color: #F3C899;
+    height: 1000vh;
+}
+
+.home{
+    display: flex;
+    height: 76.7vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 5% 0% 5%;
+}
+
+.main-img {
+    height: 40vh;
+    border-radius: 20%;
+}
+
+
+/*Rodapé*/
+
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Franklin Gothic Medium',
+     'Arial Narrow', Arial, sans-serif;
+    background: #787833;
+    color: #FEA94E;
+    height: 50vh;
+}
+
+.Logo-rodape {
+    width: 20%;
+}
+
+.rodape-logo-texto {
+    margin-top: 1%;
+    flex-direction: column;
 }
