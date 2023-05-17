@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:ital,wght@1,500&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-main{
+main {
+    display: flex;
     font-family: 'Poppins';
+    background-color: #F3C899;
+    height: 86vh;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 a {
@@ -24,8 +25,6 @@ a:hover {
     opacity: 0.7;
 }
 
-/*Navbar*/
-
 .Logo {
     font-size: 24px;
     text-transform: uppercase;
@@ -33,6 +32,8 @@ a:hover {
     margin: 9px;
     height: 80%;
 }
+
+/* NAVBAR */
 
 nav {
     display: flex;
@@ -127,60 +128,30 @@ nav {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
-/*Main page - Home*/
+/* MAIN VALIDAÇÃO */
 
-main {
-    background-color: #F3C899;
-    height: 1000vh;
-}
-
-.home{
+h1 {
     display: flex;
-    height: 76.7vh;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5% 5% 0% 5%;
+    justify-content: center;
 }
 
-.main-img {
-    height: 40vh;
-    border-radius: 20%;
-}
-
-
-/*Rodapé*/
-
-.rodape {
+.caixa-grande {
     display: flex;
+    justify-content: center;
     justify-content: space-evenly;
-    background: #787833;
-    color: #FEA94E;
-    height: 50vh;
-    font-family: 'Poppins';
+    
 }
 
-.Logo-rodape {
-    width: 20%;
+.cadastro-link {
+    color:black;
+    border: black;
 }
 
-.rodape-gatoamigo {
-    margin-top: 3%;
-    flex-direction: column;
-}
-
-.rodape-menu {
-    margin-top: 3%;
-    flex-direction: column;
-}
-
-.gatos-txth1 {
-    padding: 10%;
-}
-
-.gatos-img1{
-    image-resolution: ;
-}
-
-.gatos-img2{
-    image-resolution: ;
+.cadastro-container {
+    display: flex;
+    align-items: center;
+    height: 25vh;
+    width: 25vh;
+    border: black solid 1px;
+    background-color: #AEB37F;
 }
