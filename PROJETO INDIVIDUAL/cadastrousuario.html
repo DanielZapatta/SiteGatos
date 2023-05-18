@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/531591aaaf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/cadastrousuario.css">
-    <title>CadastroUsuario</title>
+    <title>Formulário de Cadastro de Usuário</title>
 </head>
 <body>
 
@@ -44,10 +45,64 @@
             </ul>
         </nav>
     </header>
-    
-    <div>
-        <h1>CADASTRO USUARIO</h1>
-    </div>
+
+    <main>
+
+        <div class="form">
+            
+            <form action="">
+
+                <h2 class="titulo">CADASTRE-SE</h2>
+
+                <label>Nome</label>
+                <div>
+
+                    <input class="input" placeholder="Digite o teu sobrenome" type="text" required>
+                </div>
+
+                <label>Sobrenome</label>
+                <div>
+
+                    <input class="input" id="sobrenome" placeholder="Digite o teu sobrenome" type="text" required>
+                </div>
+
+                <label>Celular</label>
+                <div>
+
+                    <input class="input" id="celular" placeholder="(XX) XXXXX-XXXX)" type="number" required>
+                </div>
+
+                <label>Sua data de nascimento</label>
+                <div>
+
+                    <input class="input" id="datanascimento" type="date" required>
+                </div>
+
+                <label>E-mail</label>
+                <div>
+
+                    <input class="input" id="email" placeholder="Digite o teu email" type="text" required>
+                </div>
+
+                <label>Senha</label>
+                <div>
+
+                    <input class="input" id="senha" placeholder="Digite a sua senha" type="password" required>
+                </div>
+
+                <label>Confirmar senha</label>
+                <div>
+                    
+                    <input class="input" id="confirmasenha" placeholder="Confirme a sua senha" type="password" required>
+                </div>
+
+                <button><a href="#" >Cadastrar</a></button>
+
+            </form>
+
+        </div>
+
+    </main>
 
 </body>
 </html>

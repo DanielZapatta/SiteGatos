@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastroong.css">
-    <title>CadastroONG</title>
+    <title>Formulário de Cadastro de ONG</title>
 </head>
 <body>
 
@@ -45,9 +45,63 @@
         </nav>
     </header>
     
-    <div>
-        <h1>CADASTRO ONG</h1>
-    </div>
-    
+    <main>
+
+        <div class="form">
+            
+            <form action="">
+
+                <h2 class="titulo">CADASTRE-SE</h2>
+
+                <label>Razão social</label>
+                <div>
+
+                    <input class="input" placeholder="Razão Social da ONG" type="text" required>
+                </div>
+
+                <label>CNPJ</label>
+                <div>
+
+                    <input class="input" id="cnpj" placeholder="CNPJ da ONG" type="text" required>
+                </div>
+
+                <label>Número do CEP</label>
+                <div>
+
+                    <input class="input" id="enderecocep" placeholder="XXXXX-XXX" type="number" required>
+                </div>
+
+                <label>Número do endereço</label>
+                <div>
+
+                    <input class="input" id="endereconum" placeholder="Número do endereço" type="number" required>
+                </div>
+
+                <label>E-mail</label>
+                <div>
+
+                    <input class="input" id="email" placeholder="Digite o teu email" type="text" required>
+                </div>
+
+                <label>Senha</label>
+                <div>
+
+                    <input class="input" id="senha" placeholder="Digite a sua senha" type="password" required>
+                </div>
+
+                <label>Confirmar senha</label>
+                <div>
+                    
+                    <input class="input" id="confirmasenha" placeholder="Confirme a sua senha" type="password" required>
+                </div>
+
+                <button><a href="#" >Cadastrar</a></button>
+
+            </form>
+
+        </div>
+
+    </main>
+
 </body>
 </html>
