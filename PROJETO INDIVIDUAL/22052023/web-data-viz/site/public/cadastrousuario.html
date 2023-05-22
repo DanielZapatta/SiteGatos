@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/531591aaaf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/cadastrousuario.css">
+    <script src="./js/funcoes.js"></script>
+    <title>Formulário de Cadastro de Usuário</title>
+</head>
+
+<body>
+
+    <header>
+        <nav id="navbar">
+            <a class="Logo" href="index.html"><img class="Logo" src="pics/logo.png"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#gatos">Gatos</a>
+                </li>
+
+                <li>
+                    <a href="#ONG's">ONG's</a>
+                </li>
+
+                <li>
+                    <a href="/">|</a>
+                </li>
+
+                <li>
+                    <a href="/">Login</a>
+                </li>
+
+                <li>
+                    <a href="/">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="form">
+
+            <h2 class="titulo">CADASTRE-SE</h2>
+
+            <div class="form-inputs">
+
+                <div class="form1">
+
+                    <label>Nome</label>
+                    <div>
+
+                        <input id="nome_input" class="input" placeholder="Digite o teu sobrenome" type="text" required>
+                    </div>
+
+                    <label>Sobrenome</label>
+                    <div>
+
+                        <input id="sobrenome_input" class="input" id="sobrenome" placeholder="Digite o teu sobrenome"type="text" required>
+                    </div>
+
+                    <label>Celular</label>
+                    <div>
+
+                        <input id="celular_input" class="input" id="celular" placeholder="(XX) XXXXX-XXXX" type="number"required>
+                    </div>
+
+                    <label>Sua data de nascimento</label>
+                    <div>
+
+                        <input id="dtnasc_input" class="input" id="datanascimento" type="date" required>
+                    </div>
+
+                </div>
+
+                <div class="form2">
+
+                    <label>E-mail</label>
+                    <div>
+
+                        <input id="email_input" class="input" id="email" placeholder="Digite o teu email" type="text" required>
+                    </div>
+
+                    <label>Senha</label>
+                    <div>
+
+                        <input id="senha_input" class="input" id="senha" placeholder="Digite a sua senha" type="password" required>
+                    </div>
+
+                    <label>Confirmar senha</label>
+                    <div>
+
+                        <input id="confirmacao_senha_input" class="input" id="confirmasenha" placeholder="Confirme a sua senha" type="password" required>
+                    </div>
+
+                    <div class="button">
+                        <a href="#"><button>Cadastrar</button></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var sobrenomeVar = sobrenome_input.value;
+        var celularVar = celular_input.value;
+        var dtnascVar = dtnasc_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || sobrenomeVar == "" || celularVar == "" || dtnascVar== "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                celularServer: celularVar,
+                dtnascServer: dtnascVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

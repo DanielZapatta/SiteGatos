@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:ital,wght@1,500&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins';
 }
 
 main {
+    display: flex;
     width: 100%;
     height: 86vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins';
@@ -42,7 +41,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     font-family: 'Franklin Gothic Medium',
-     'Arial Narrow', Arial, sans-serif;
+        'Arial Narrow', Arial, sans-serif;
     background: #787833;
     color: #FEA94E;
     height: 14vh;
@@ -53,7 +52,7 @@ nav {
     display: flex;
 }
 
-.nav-list li{
+.nav-list li {
     letter-spacing: 3px;
     margin-left: 64px;
 }
@@ -76,7 +75,7 @@ nav {
         overflow-x: hidden;
     }
 
-    .nav-list{
+    .nav-list {
         position: absolute;
         top: 14vh;
         right: 0;
@@ -132,18 +131,18 @@ nav {
 
 /* FORMULÁRIO CADASTRO */
 
-form {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: #F4B97A;
-    border-radius: 10px;
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 1px #787833 solid;
     padding: 10px 50px 10px 50px;
-    width: min-content;
-    align-items: center;
-    justify-content: center;
+    background-color: #F4B97A;
     color: #787833;
+}
+
+.form-inputs {
+    display: flex;
+    gap: 30px;
 }
 
 .titulo {
@@ -165,10 +164,14 @@ button {
     display: flex;
     justify-content: center;
     min-width: 200px;
-    box-sizing: border-box;
     border-radius: 5px;
     background-color: #787833;
     border: 2px #FEA94E solid;
-    padding: 5px;
-    margin: 0px 0px 12px -5px;
+    padding: 10px 50px 10px 50px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0px 12px -5px;
 }
