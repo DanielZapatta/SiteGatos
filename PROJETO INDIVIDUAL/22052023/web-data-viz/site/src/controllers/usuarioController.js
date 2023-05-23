@@ -63,23 +63,32 @@ function entrar(req, res) {
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
+    var sobrenome = req.body.sobrenomeServer;
+    var celular = req.body.celularServer;
+    var dtnasc = req.body.dtnascServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+        res.status(400).send("Informe um nome válido!");
+    } else if (sobrenome == undefined) {
+        res.status(400).send("Informe um sobrenome válido!");
+    } else if (celular == undefined) {
+        res.status(400).send("Coloque um número de telefone para contato!");
+    } else if (dtnasc == undefined) {
+        res.status(400).send("Informe a sua data de nascimento!");
     } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
+        res.status(400).send("Informe um e-mail válido!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    } else {
+        res.status(400).send("Informe a sua senha!");
+    }
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, sobrenome, celular, dtnasc, email, senha)
             .then(
                 function (resultado) {
-                    res.json(resultado);
+                    return res.json(resultado);
                 }
             ).catch(
                 function (erro) {
@@ -92,7 +101,7 @@ function cadastrar(req, res) {
                 }
             );
     }
-}
+
 
 module.exports = {
     entrar,
