@@ -13,14 +13,12 @@ CREATE TABLE cadastro_usuario (
 
 CREATE TABLE cadastro_ong (
 	idong INT PRIMARY KEY AUTO_INCREMENT,
-	nome_ong VARCHAR(100),
-	cnpj_ong CHAR(18),
-    email_ong VARCHAR (80),
-    senha_ong VARCHAR(32),
-    cep_ong CHAR(8),
-    numend_ong INT,
-    telefone_ong CHAR(10),
-    celular_ong CHAR(11)
+	razaosocial VARCHAR(100),
+	cnpj CHAR(18),
+    cep CHAR(8),
+    numend INT,
+    email VARCHAR (80),
+	senha VARCHAR(32)
 )AUTO_INCREMENT = 1000;
 
 CREATE TABLE cadastro_gatos (
