@@ -1,17 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:ital,wght@1,500&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-main {
-    display: flex;
+html {
+    scroll-behavior: smooth;
+}
+
+main{
     font-family: 'Poppins';
-    background-color: rgb(224, 224, 224);
-    height: 86vh;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 
 a {
@@ -25,6 +24,8 @@ a:hover {
     opacity: 0.7;
 }
 
+/*Navbar*/
+
 .Logo {
     font-size: 24px;
     text-transform: uppercase;
@@ -32,8 +33,6 @@ a:hover {
     margin: 9px;
     height: 80%;
 }
-
-/* NAVBAR */
 
 nav {
     display: flex;
@@ -128,30 +127,23 @@ nav {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
-/* MAIN VALIDAÇÃO */
+/*Main page - Home*/
 
-h1 {
-    display: flex;
-    justify-content: center;
+main {
+    background-color: rgb(224, 224, 224);
+    color: #693804;
+    height: 600vh;
 }
 
-.caixa-grande {
+.home{
     display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    
-}
-
-.cadastro-link {
-    color:black;
-    border: black;
-}
-
-.cadastro-container {
-    display: flex;
+    height: 76.7vh;
+    justify-content: space-between;
     align-items: center;
-    height: 25vh;
-    width: 25vh;
-    border: black solid 1px;
-    background-color: #AEB37F;
+    padding: 5% 5% 0% 5%;
+}
+
+.main-img {
+    height: 40vh;
+    border-radius: 20%;
 }

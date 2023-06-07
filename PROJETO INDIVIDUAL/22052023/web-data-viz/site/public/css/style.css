@@ -130,8 +130,9 @@ nav {
 /*Main page - Home*/
 
 main {
-    background-color: #F3C899;
-    height: 1000vh;
+    background-color: rgb(224, 224, 224);
+    color: #693804;
+    height: 600vh;
 }
 
 .home{
