@@ -63,7 +63,7 @@
                         <label>Raça</label>
                         <div>
 
-                            <input id="Raca_input" class="input" placeholder="Raça do gatinho" type="text" required>
+                            <input id="raca_input" class="input" placeholder="Raça do gatinho" type="text" required>
                         </div>
 
                         <label>Cor</label>
@@ -89,3 +89,59 @@
 </body>
 
 </html>
+
+<script>
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var idadeVar = idade_input.value;
+        var racaVar = raca_input.value;
+        var corVar = cor_input.value;
+
+        if (nomeVar == "" || idadeVar == "" || racaVar == "" || corVar == "") {
+            alert ('Os campos não podem estar vazios!');
+
+            return false;
+        }
+
+        // Enviando o valor da nova input
+        fetch("/gatos/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/ongs.js
+                nomeServer: nomeVar,
+                idadeServer: idadeVar,
+                racaServer: racaVar,
+                corServer: corVar,
+            })
+            
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                // mensagem_erroinnerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    alert ('Cadastro de gatinho realizado com sucesso!')
+                }, "2000")
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+</script>

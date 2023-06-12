@@ -10,7 +10,7 @@
     <title>Dashboard Usuário</title>
 </head>
 
-<body>
+<body onload="listarqtdGatos()">
 
     <header>
         <nav id="navbar">
@@ -50,8 +50,10 @@
                     <div class="indicador">
 
                         <div class="caixa-indicador">
-                        
+
                             <span>GATOS DISPONÍVEIS</span>
+
+                            <div id="qtd_totalgatos"></div>
 
                         </div>
 
@@ -74,17 +76,17 @@
 
                             <button class="arrow-left control" aria-label="Previous image">◀</button>
                             <button class="arrow-right control" aria-label="Next Image">▶</button>
-        
+
                             <div class="gallery-wrapper">
-        
+
                                 <div class="gallery">
-        
+
                                     abcdef
-        
+
                                 </div>
-        
+
                             </div>
-        
+
                         </div>
 
                     </div>
@@ -122,7 +124,7 @@
             borderColor: '#123456',
             data: [12, 15, 8, 4, 22, 17, 3],
         }]
-        
+
     };
 
     const config = {
@@ -135,8 +137,45 @@
 
 <script>
     const mychart = new Chart(
-        document.getElementById ('mychart'),
+        document.getElementById('mychart'),
         config
     );
+
+</script>
+
+<script>
+
+    function listarqtdGatos() {
+        console.log("testando")
+        fetch(`/metricas/listarqtdGatos/`).then(function (resposta) {
+            console.log("entrei no fetch")
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var gatos = document.getElementById("qtd_totalgatos");
+                    var texto = document.createElement("span");
+                    texto.innerHTML = "Nada encontrado"
+                    tarefa.appendChild(texto);
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var gatos = document.getElementById("qtd_totalgatos");
+                    gatos.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        gatos.innerHTML = `<b class="card-caminhao">${publicacao.qtd_totalgatos}</b>`
+                    }
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+
+    }
 
 </script>

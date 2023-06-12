@@ -13,6 +13,8 @@ var usuarioRouter = require("./src/routes/usuarios");
 var ongRouter = require("./src/routes/ongs");
 var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
+var gatosRouter = require ("./src/routes/gatos");
+var metricasRouter = require ("./src/routes/metricas");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,10 +23,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
+app.use("/gatos", gatosRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/ongs", ongRouter);
 app.use("/avisos", avisosRouter);
-app.use("/medidas", medidasRouter)
+app.use("/medidas", medidasRouter);
+app.use("/metricas", metricasRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
