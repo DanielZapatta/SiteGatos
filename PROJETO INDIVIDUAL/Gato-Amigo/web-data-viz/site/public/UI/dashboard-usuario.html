@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/uiusuario.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard Usuário</title>
+</head>
+
+<body>
+
+    <header>
+        <nav id="navbar">
+            <a class="Logo" href="pics/logo1.png"><img class="Logo" src="pics/logo.png"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+
+                <li>
+                    <a href="../index.html">HOME</a>
+                </li>
+
+                <li>
+                    <a href="/">|</a>
+                </li>
+
+                <li>
+                    <a href="../index.html">SAIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- INICIO DA DASHBOARD DO USUÁRIO -->
+
+    <main>
+
+        <div class="estetica">
+
+            <div class="tela-interacao">
+
+                <div class="graficos">
+
+                    <div class="indicador">
+
+                        <div class="caixa-indicador">
+                        
+                            <span>GATOS DISPONÍVEIS</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-barra">
+
+                        <canvas id="mychart" style="position: relative; height: 100%; width: 100%;"></canvas>
+
+                    </div>
+
+                </div>
+
+                <div class="area-carrossel">
+
+                    <div class="carrossel">
+
+                        <div class="container">
+
+                            <button class="arrow-left control" aria-label="Previous image">◀</button>
+                            <button class="arrow-right control" aria-label="Next Image">▶</button>
+        
+                            <div class="gallery-wrapper">
+        
+                                <div class="gallery">
+        
+                                    abcdef
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+
+<script src="js/carrossel.js"></script>
+
+<script>
+    const labels = [
+        '01/05',
+        '08/05',
+        '15/05',
+        '22/05',
+        '29/05',
+        '05/06',
+        '12/06',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Gatos adotados nas últimas 7 semanas',
+            backgroundColor: '#f02e4a',
+            borderColor: '#123456',
+            data: [12, 15, 8, 4, 22, 17, 3],
+        }]
+        
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+</script>
+
+<script>
+    const mychart = new Chart(
+        document.getElementById ('mychart'),
+        config
+    );
+
+</script>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/531591aaaf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/cadastroong.css">
+    <script src="./js/funcoes.js"></script>
+    <title>Formulário de Cadastro de ONG</title>
+</head>
+
+<body>
+
+    <header>
+        <nav id="navbar">
+            <a class="Logo" href="index.html"><img class="Logo" src="pics/logo.png"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="index.html">Gatos</a>
+                </li>
+
+                <li>
+                    <a href="index.html">ONG's</a>
+                </li>
+
+                <li>
+                    <a href="/">|</a>
+                </li>
+
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+
+                <li>
+                    <a href="verificacaocad.html">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+
+        <div class="estetica">
+
+        <div class="form">
+            
+            <h2 class="titulo">CADASTRE-SE</h2>
+
+            <div class="form-inputs">
+
+                <div class="form1">
+
+                    <label>Razão social</label>
+                    <div>
+
+                        <input id="razaosocial_input" class="input" placeholder="Razão Social da ONG" type="text" required>
+                    </div>
+
+                    <label>CNPJ</label>
+                    <div>
+
+                        <input id="cnpj_input" class="input" placeholder="CNPJ da ONG" type="text" required>
+                    </div>
+
+                    <label>Número do CEP</label>
+                    <div>
+
+                        <input id="cep_input" class="input" placeholder="XXXXX-XXX" type="number" required>
+                    </div>
+
+                    <label>Número do endereço</label>
+                    <div>
+
+                        <input id="numend_input" class="input" placeholder="Número do endereço" type="number" required>
+                    </div>
+
+                </div>
+
+                <div class="form2">
+
+                    <label>E-mail</label>
+                    <div>
+
+                        <input id="email_input" class="input" placeholder="Digite o teu email" type="text" required>
+                    </div>
+
+                    <label>Senha</label>
+                    <div>
+
+                        <input id="senha_input" class="input" placeholder="Digite a sua senha" type="password" required>
+                    </div>
+
+                    <label>Confirmar senha</label>
+                    <div>
+                    
+                        <input id="confirmacao_senha_input" class="input" placeholder="Confirme a sua senha" type="password" required>
+                    </div>
+
+                    <div class="button">
+                        <a><button onclick="cadastrar()">Cadastrar</button></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var razaosocialVar = razaosocial_input.value;
+        var cnpjVar = cnpj_input.value;
+        var cepVar = cep_input.value;
+        var numendVar = numend_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (razaosocialVar == "" || cnpjVar == "" || cepVar == "" || numendVar== "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            alert ('Os campos não podem estar vazios!');
+
+            return false;
+        }
+
+        // Enviando o valor da nova input
+        fetch("/ongs/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/ongs.js
+                razaosocialServer: razaosocialVar,
+                cnpjServer: cnpjVar,
+                cepServer: cepVar,
+                numendServer: numendVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+            
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                // mensagem_erroinnerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location.href = "Login Ong.html";
+                }, "2000")
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+</script>

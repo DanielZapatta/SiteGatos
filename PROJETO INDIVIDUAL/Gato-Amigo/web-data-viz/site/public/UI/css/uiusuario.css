@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:ital,wght@1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    transition: 10s ease;
+    cursor: pointer;
+    color: #FEA94E;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/*Navbar*/
+
+.Logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 9px;
+    height: 80%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium',
+     'Arial Narrow', Arial, sans-serif;
+    background: #787833;
+    color: #FEA94E;
+    height: 14vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 64px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: .3s;
+}
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-list{
+        position: absolute;
+        top: 14vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #787833;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: 0.3s ease-in;
+    }
+
+    .nav-list li {
+        cursor: pointer;
+        display: none;
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0)
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/*Main page - Home*/
+main {
+    background-color: #f0eeea;
+    color: #787833;
+    height: 86vh;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins';
+}
+
+.estetica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FBEFE3;
+    border: 2px rgb(138, 138, 138) solid;
+    border-top: none;
+    border-bottom: none;
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+.tela-interacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border: 1px red solid;
+}
+
+.graficos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    border: 1px red solid;
+}
+
+.indicador {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px red solid;
+    width: 100%;
+    height: 30%;
+}
+
+.caixa-indicador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0eeea;
+    border: 2px red solid;
+    width: 60%;
+    height: 60%;
+}
+
+.dashboard-barra {
+    display: flex;
+    border: 1px red solid;
+    width: 100%;
+    height: 70%;
+}
+
+.area-carrossel {
+    
+}
+
+/* CARROSSEL */
+
+.container {
+    position: relative;
+    padding: 15px;
+    max-width: 80%;
+    height: 56.5%;
+    margin: 0 auto;
+    border-top: 2px rgb(138, 138, 138) solid;
+    border-bottom: 2px rgb(138, 138, 138) solid;
+}
+  
+  .gallery-wrapper {
+    overflow-x: auto;
+}
+  
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    font-size: 20px;
+    line-height: 250px;
+    width: 40px;
+    color: #fff;
+    transition: all 600ms ease-in-out;
+    background: linear-gradient(to left, transparent 0%, black 200%);
+    opacity: 0.1;
+    cursor: pointer;
+    border: none;
+}
+  
+.arrow-left:hover,
+.arrow-right:hover {
+    opacity: 1;
+}
+  
+.arrow-right {
+    right: 0;
+    left: auto;
+    text-align: right;
+    background: linear-gradient(to right, transparent 0%, black 200%);
+}
+  
+.gallery {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+}
+  
+.item {
+    width: 500px;
+    height: 500;
+    flex-shrink: 0;
+    transition: all 600ms ease-in-out;
+    opacity: 0.5;
+}
+  
+.current-item {
+    opacity: 1;
+}
+  
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato Amigo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <a class="Logo" href="pics/logo1.png"><img class="Logo" src="pics/logo.png"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#gatos">Gatos</a>
+                </li>
+
+                <li>
+                    <a href="#ongs">ONG's</a>
+                </li>
+
+                <li>
+                    <a href="/">|</a>
+                </li>
+
+                <li>
+                    <a href="/">Login</a>
+                </li>
+
+                <li>
+                    <a href="verificacaocad.html">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAINPAGE -->
+
+    <main>
+
+        <div class="estetica">
+
+            <!--<img class="main-img" src="pics/gato.jpg">-->
+
+            <!-- Homepage -->
+
+            <home>
+
+                <div href="index.html" id="home" class="home">
+
+                    <div class="home-gatos1">
+                        <h1>Mais de trinta milhões de animais estão abandonados nas ruas do Brasil!</h1> <br> <br>
+                        <h2>Desses trinta milhões, dez mihões são os gatos...</h2> <br> <br>
+                        <h3>Você ONG, coloque aqui os gatos para serem doados enquanto usuários possam adotar eles!</h3>
+                    </div>
+
+                    <div>
+                        <img class="main-img" src="pics/gato.jpg">
+                    </div>
+
+                </div>
+
+            </home>
+
+            <!-- Gatos -->
+
+            <div id="gatos" class="gatos">
+
+                <div class="cardtexto1">
+                    <div class="gatos-txth3">
+                        <h3>O gato ou gato doméstico é um mamífero carnívoro da família dos felídeos,
+                            muito popular como animal de estimação. Ocupando o topo da cadeia alimentar,
+                            é predador natural de diversos animais, como roedores, pássaros, lagartixas
+                            e alguns insetos</h3>
+                    </div>
+                </div>
+
+                <!-- CARROSSEL GATOS -->
+
+                <!-- INOVAÇÃO DE ALEATORIEDADE DE IMAGEM -->
+
+                <div class="container">
+
+                    <button class="arrow-left control" aria-label="Previous image">◀</button>
+                    <button class="arrow-right control" aria-label="Next Image">▶</button>
+
+                    <div class="gallery-wrapper">
+
+                        <div class="gallery">
+
+                            <img src="https://source.unsplash.com/random/500x500/?gato" alt="Beach Image"
+                                class="item current-item">
+
+                            <img src="https://source.unsplash.com/random/500x500/?gato filhote" alt="Animal Image"
+                                class="item current-item">
+
+                            <img src="https://source.unsplash.com/random/500x500/?gato dormindo" alt="Street Image"
+                                class="item current-item">
+
+                            <img src="https://source.unsplash.com/random/500x500/?gato brincando" alt="Zoo Image"
+                                class="item current-item">
+
+                            <img src="https://source.unsplash.com/random/500x500/?gato angorá" alt="Model Image"
+                                class="item current-item">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="gatos-txth3">
+                    <div class="card">
+                        <h3>Aqui na Gato Amigo, uma ONG deve se cadastrar para colocar
+                            um gatinho para adoção!
+                        </h3>
+
+                        <div class="button">
+                            <a href="cadastroong.html"><button>Cadastrar ONG</button></a>
+                        </div>
+
+                    </div>
+                    <div class="card">
+
+                        <h3>
+                            Um usuário pode adotar um gato, sendo necessário
+                            se cadastrar clicando no botão abaixo!
+                        </h3>
+
+                        <div class="button">
+                            <a href="cadastrousuario.html"><button>Cadastrar Usuário</button></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ONG'S -->
+
+            <ongs class="ongs" id="ongs">
+
+                <div class="tituloong">
+
+                    <h2>
+                        Lista de ONG's de resgate animal!
+                    </h2>
+
+                </div class="area-vetor">
+
+                <button onclick="mostrar()">Verificar ONGS</button> <br>
+
+                <div class="vetores">
+
+                    <div id="ongs_lista"></div>
+
+                </div>
+
+            </ongs>
+
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <rodape class="rodape">
+
+        <div class="rodape-gatoamigo">
+            <a href="#navbar">
+                <h1>Gato Amigo</h1>
+            </a> <br>
+            <p>A gato amigo visa disponibilizar <br>
+                uma interface de cadastro para <br>
+                as ONG's doar um gatinho e os <br>
+                usuários adotarem um ou mais gatos. <br> <br>
+                Nós sempre buscaremos um lar <br>
+                próximo da ONG pois buscamos sempre <br>
+                A interação entre cliente e <br>
+                organização mais adequada.</p>
+        </div>
+
+        <div class="rodape-menu">
+            <h1>Menu</h1><br>
+            <a href="#home">Home</a><br>
+            <a href="#gatos">Gatos</a><br>
+            <a href="#ONG's">ONG's</a><br>
+            <a href="#Login">Login</a><br>
+            <a href="#Cadastro">Cadastro</a><br>
+            <a href="#gatosadotados">Alguns gatos adotados</a><br>
+        </div>
+
+    </rodape>
+
+</body>
+
+</html>
+
+<script src="js/carrossel.js"></script>
+
+<script>
+
+    var lista_ongs = ['<a href="https://www.suipa.org.br/" target="_blank"><div class="ong1">SUIPA<br>Situada em: Av. Dom Hélder Câmara, 1801 - Benfica, Rio de Janeiro - RJ, 20973-011</div></a>',
+        '<a href="https://amparanimal.org.br/" target="_blank"><div class="ong2">Ampara Animal<br>Situada em:  R. Purús, 475 - Jardim Paineiras, Diadema - SP, 09932-240</div></a>',
+        '<a href="https://www.caosemdono.com.br/" target="_blank"><div class="ong3">Cão sem Dono<br>Situada em: R. Vitor Emanuel, 200 - Sacomã, São Paulo - SP, 04174-000 </div></a>',
+        '<a href="https://www.ongviralataedez.com/" target="_blank"><div class="ong4">Vira Lata é Dez<br>Situada em: R. Manoel Velasco, 90 - Vila Leopoldina, São Paulo - SP, 05319-010</div></a>',
+        '<a href="https://institutocaramelo.org/" target="_blank"><div class="ong5">Instituto Caramelo<br>Situada em: Avenida José Ferreira dos Reis, 890 - Jardim Itapuã 09445-690</div></a>',
+        '<a href="https://www.focinhosdeluz.com/" target="_blank"><div class="ong6">Focinhos de Luz<br>Situada em: Av. José Luiz Ferraz, 200 - Recreio dos Bandeirantes</div></a>',
+        '<a href="https://amigosdesaofrancisco.com.br/" target="_blank"><div class="ong7">Amigos de São Francisco<br>Situada em: Estr. dos Moraes, 5 - Jardim Sao Francisco, Embu das Artes - SP, 06814-200</div></a>',
+        '<a href="http://www.gatopoles.com.br/" target="_blank"><div class="ong8">Gatópoles - Adoção de Gatinhos<br>Situada em: Rua Paulina, 737 CHACARA MAFALDA SAO PAULO - SP 03370-040</div></a>']
+
+    function mostrar() {
+
+        ongs_lista.innerHTML = ``;
+
+        for (var i = 0; i < lista_ongs.length; i++) {
+            var ongs = lista_ongs[i];
+            ongs_lista.innerHTML += `${ongs} <br>`
+        };
+
+        // ongs_lista.innerHTML = `${listaimagens.length[]} <br>`
+
+    }
+
+</script>
