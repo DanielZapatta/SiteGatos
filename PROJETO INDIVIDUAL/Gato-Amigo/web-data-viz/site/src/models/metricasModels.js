@@ -8,6 +8,7 @@ function listarqtdGatos(){
     return database.executar(instrucao);
 }
 
+
 module.exports = {
     listarqtdGatos,
 }

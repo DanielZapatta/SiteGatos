@@ -51,7 +51,7 @@
 
                         <div class="caixa-indicador">
 
-                            <span>GATOS DISPONÍVEIS</span>
+                            <span>GATOS CADASTRADOS NO SITE</span>
 
                             <div id="qtd_totalgatos"></div>
 
@@ -60,9 +60,20 @@
                     </div>
 
 
-                    <div class="dashboard-barra">
+                    <div class="adotar">
 
-                        <canvas id="mychart" style="position: relative; height: 100%; width: 100%;"></canvas>
+                        <div class="card">
+
+                            <h3>
+                                Clique no botão abaixo para entrar em contato com o nosso
+                                whatsapp para efetuar uma adoção com alguma ONG parceira.
+                            </h3>
+    
+                            <div class="button">
+                                <a href="https://web.whatsapp.com/send?phone=11999658657" target="_blank"><button>Contato</button></a>
+                            </div>
+    
+                        </div>
 
                     </div>
 
@@ -70,24 +81,9 @@
 
                 <div class="area-carrossel">
 
-                    <div class="carrossel">
+                    <div class="container">
 
-                        <div class="container">
-
-                            <button class="arrow-left control" aria-label="Previous image">◀</button>
-                            <button class="arrow-right control" aria-label="Next Image">▶</button>
-
-                            <div class="gallery-wrapper">
-
-                                <div class="gallery">
-
-                                    abcdef
-
-                                </div>
-
-                            </div>
-
-                        </div>
+                        <canvas id="mychart" style="position: relative; height: 100%; width: 880px;"></canvas>
 
                     </div>
 
@@ -103,47 +99,22 @@
 
 </html>
 
-<script src="js/carrossel.js"></script>
-
 <script>
     const labels = [
-        '01/05',
-        '08/05',
-        '15/05',
-        '22/05',
-        '29/05',
-        '05/06',
+        '07/06',
+        '08/06',
+        '09/06',
+        '10/06',
+        '11/06',
         '12/06',
+        '13/06',
     ];
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Gatos adotados nas últimas 7 semanas',
-            backgroundColor: '#f02e4a',
-            borderColor: '#123456',
-            data: [12, 15, 8, 4, 22, 17, 3],
-        }]
 
-    };
 
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-    };
+  
 
-</script>
 
-<script>
-    const mychart = new Chart(
-        document.getElementById('mychart'),
-        config
-    );
-
-</script>
-
-<script>
 
     function listarqtdGatos() {
         console.log("testando")
@@ -158,6 +129,7 @@
                 }
 
                 resposta.json().then(function (resposta) {
+                    plotarGrafico(resposta);
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
                     var gatos = document.getElementById("qtd_totalgatos");
@@ -177,5 +149,50 @@
         });
 
     }
+
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+
+        // Criando estrutura para plotar gráfico - dados
+        
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Gatos cadastrados nas últimas 7 semanas',
+            backgroundColor: 'rgb(82, 120, 116)',
+            borderColor: '#123456',
+            data: [12, 15, 8, 4, 22, 17],
+        }]
+
+    };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            data.datasets[0].data.push(registro.qtd_totalgatos);
+        }
+
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: data,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        const mychart = new Chart(
+        document.getElementById('mychart'),
+        config
+    );
+    }
+
+
 
 </script>

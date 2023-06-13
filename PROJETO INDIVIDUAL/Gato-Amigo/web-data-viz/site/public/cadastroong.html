@@ -39,7 +39,7 @@
                 </li>
 
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="verificacaologin.html">Login</a>
                 </li>
 
                 <li>
@@ -140,7 +140,18 @@
 
         if (razaosocialVar == "" || cnpjVar == "" || cepVar == "" || numendVar== "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             alert ('Os campos não podem estar vazios!');
-
+            return false;
+        } else if (cnpjVar.length != 14) {
+            alert ('O CNPJ deve conter 14 caracteres sem traços e pontos.');
+            return false;
+        } else if (cepVar.length != 8) {
+            alert ('Insira um CEP de 9 dígitos sem traço.');
+            return false;
+        } else if (emailVar.search("@") == -1) {
+            alert ('Necessário ter um @!');
+            return false;
+        } else if (senhaVar.length < 6) {
+            alert ('A senha tem de ser maior de 5 dígitos!');
             return false;
         }
 

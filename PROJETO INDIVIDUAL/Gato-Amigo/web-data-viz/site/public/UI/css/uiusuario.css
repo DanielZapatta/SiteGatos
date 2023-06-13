@@ -134,37 +134,30 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: #FBEFE3;
-    border: 2px rgb(138, 138, 138) solid;
+    border: 1px rgb(138, 138, 138) solid;
     border-top: none;
     border-bottom: none;
     width: 90%;
-    height: 100%;
+    height: 99.9%;
     margin-left: 5%;
 }
 
 .tela-interacao {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
     height: 100%;
-    border: 1px red solid;
+    border-left: 1px rgb(138, 138, 138) solid;
+    border-right: 1px rgb(138, 138, 138) solid;
 }
 
-.graficos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    height: 100%;
-    border: 1px red solid;
-}
 
 .indicador {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: 1px red solid;
+    border-bottom: 1px rgb(138, 138, 138) solid;
+    border-right: 1px rgb(138, 138, 138) solid;
     width: 100%;
     height: 30%;
 }
@@ -173,93 +166,67 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
     background-color: #f0eeea;
-    border: 2px red solid;
+    border: 2px rgb(138, 138, 138) solid;
     width: 60%;
     height: 60%;
 }
 
-.dashboard-barra {
+/* BOTÃO WHATSAPP */
+
+.adotar {
     display: flex;
-    border: 1px red solid;
+    justify-content: space-around;
+    align-items: center;
+    border-right: 1px rgb(138, 138, 138) solid;
     width: 100%;
     height: 70%;
 }
 
-.area-carrossel {
-    
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 60%;
+    padding: 20px 20px 20px 20px;
+    background-color: #f0eeea;
+    border: 2px rgb(138, 138, 138) solid;
+    border-radius: 5%;
+    margin: 2% 2% 2% 2%;
+    text-align: center;
 }
 
-/* CARROSSEL */
+button {
+    display: flex;
+    justify-content: center;
+    min-width: 200px;
+    border-radius: 5px;
+    background-color: #787833;
+    border-bottom: 2px rgb(138, 138, 138) solid;
+    padding: 10px 50px 10px 50px;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0px 12px -5px;
+}
+
+/* GRAFICO */
 
 .container {
-    position: relative;
-    padding: 15px;
-    max-width: 80%;
-    height: 56.5%;
-    margin: 0 auto;
-    border-top: 2px rgb(138, 138, 138) solid;
-    border-bottom: 2px rgb(138, 138, 138) solid;
-}
-  
-  .gallery-wrapper {
-    overflow-x: auto;
-}
-  
-.arrow-left,
-.arrow-right {
-    position: absolute;
-    align-items: center;
-    top: 0;
-    left: 0;
-    right: auto;
-    bottom: 0;
-    font-size: 20px;
-    line-height: 250px;
-    width: 40px;
-    color: #fff;
-    transition: all 600ms ease-in-out;
-    background: linear-gradient(to left, transparent 0%, black 200%);
-    opacity: 0.1;
-    cursor: pointer;
-    border: none;
-}
-  
-.arrow-left:hover,
-.arrow-right:hover {
-    opacity: 1;
-}
-  
-.arrow-right {
-    right: 0;
-    left: auto;
-    text-align: right;
-    background: linear-gradient(to right, transparent 0%, black 200%);
-}
-  
-.gallery {
     display: flex;
-    flex-flow: row nowrap;
-    gap: 15px;
-}
-  
-.item {
-    width: 500px;
-    height: 500;
-    flex-shrink: 0;
-    transition: all 600ms ease-in-out;
-    opacity: 0.5;
-}
-  
-.current-item {
-    opacity: 1;
-}
-  
-.gallery-wrapper::-webkit-scrollbar {
-    display: none;
+    width: 100%;
+    height: 100%;
 }
 
-.gallery-wrapper {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+.grafico {
+    display: flex;
+    width: 1000px;
+    height: 100%;
 }

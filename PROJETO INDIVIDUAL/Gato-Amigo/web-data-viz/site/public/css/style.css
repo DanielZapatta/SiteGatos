@@ -267,10 +267,6 @@ main {
     text-align: center;
 }
 
-.card:hover {
-
-}
-
 button {
     display: flex;
     justify-content: center;
